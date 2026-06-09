@@ -98,12 +98,10 @@ grow(var4)
 grow(var4)
 grow(var4)
 grow(var4)
-grow(var4)
-grow(var4)
 
 print(var4)
 
-# crem o functie care adauga o proprietate intr-un dictionar.
+# cream o functie care adauga o proprietate intr-un dictionar.
 # obj_param este referinta in memorie a acelui dictionar.
 def set_hobby(obj_param, key, value):
     obj_param[key] = value
@@ -115,9 +113,7 @@ set_hobby(obj5, "hobby", "killing")
 
 print(obj5)
 
-
 # exemplu cu liste
-
 
 def add_person(param_list, person):
     if len(person) > 2:
@@ -126,45 +122,43 @@ def add_person(param_list, person):
     else:
         print("Name needs to be 3 characters or longer!")
 
-
 lista_persoane = ["John Wick", "Winston", "Daisy"]
 add_person(lista_persoane, "Cassian")
-
 add_person(lista_persoane, "TN")
-add_person(lista_persoane, "X")
+add_person(lista_persoane, "x")
 add_person(lista_persoane, "Josef")
 
 print(lista_persoane)
 
 lista_persoane2 = []
-add_person(lista_persoane, "Ion")
-add_person(lista_persoane, "Marius")
-add_person(lista_persoane, "Vasile")
-add_person(lista_persoane, "Costica")
+add_person(lista_persoane2, "Ion")
+add_person(lista_persoane2, "Marius")
+add_person(lista_persoane2, "Vasile")
+add_person(lista_persoane2, "Costica")
 
-# exemplu de functie care manipuleaza mai multe tipuri de date
+# exemplu de functie care manipuleaza mai multe tipuri de date:
 # db -> database
+
 def add_to_db(database, village, people):
-    database[village]= people.copy()
+    database[village] = people.copy()
+
 
 db = {}
 
 add_to_db(db, "Poienari", lista_persoane)
 add_to_db(db, "Gadinti", lista_persoane2)
 
-
-# cand facem .append() la lista_persoane2, schimbarea se reflecta si in dictionarul db,
-# fiindca dictionarul db tine minte o referinta spre aceasta lista.
-# daca adaugam people.copy() in ad_to_db(), nu mai avem acel bug
+# cand facem .append() la lista_persoane2, schimbarea se refleta si in dictionarul db, fiindca dictionarul db tine minte o referinta spre aceasta lista.
+# daca adaugam people.copy() in add_to_db(), nu mai avem acel bug.
 lista_persoane2.append("Ghita")
 
 pprint(db)
 
-
 var5 = [10]
 # var5 tine minte referinta acelei liste, in memorie.
-# cand scriu var6 = var5, acum si var6 tine minte acea referinta. spre
-# aceeasi lista.
+# cand scriu var6 = var5, acum si var6 tine minte acea referinta. spre aceeasi lista.
 var6 = var5
+
 var6.append(20)
+
 print(var5)
