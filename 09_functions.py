@@ -95,13 +95,21 @@ combined_list = list(zip(names, ages)) # tuple
 combined = dict(zip(names, ages)) # dict
 print(combined_list)
 print(combined)
+names1 = list(combined.keys()) # extrage toate cheile din dict
+value = list(combined.values()) # extrage toate valorile din dinct
+print(names1)
+print(value)
+
+name_at_index1 = list(combined.keys())[1] # convertire dict in list si extragere cheie de la index 1
+print(name_at_index1)
+
 
 print("\n=============== Key Values ===================")
 
 score = [6, 8, 4, 10, 9]
 
 # people = [{
-#     "name": "Jhon",
+#     "name": "John",
 #     "age": 18,
 #     "score": 6
 # },
@@ -115,14 +123,13 @@ print(zipped_people)
 people = []
 
 for elem in zipped_people:
-    # elem = ('Jhon', 18, 6) *** tuple
+    # elem = ('John', 18, 6) *** tuple
     people.append({
         "name": elem[0],
         "age": elem[1],
         "score": elem[2]
     })
-    pprint(people,
-           sort_dicts=False)
+pprint(people, sort_dicts=False)
 
-    sorted_list = sorted(people, key = lambda a: a['score'], reverse=False)
-    print(sorted_list)
+sorted_list = sorted(people, key = lambda a: a['score'], reverse=False)
+print(sorted_list)
