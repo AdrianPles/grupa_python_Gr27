@@ -148,7 +148,9 @@ db = {}
 add_to_db(db, "Poienari", lista_persoane)
 add_to_db(db, "Gadinti", lista_persoane2)
 
-# cand facem .append() la lista_persoane2, schimbarea se refleta si in dictionarul db, fiindca dictionarul db tine minte o referinta spre aceasta lista.
+# cand facem .append() la lista_persoane2, schimbarea se refleta si in dictionarul db,
+# fiindca dictionarul db tine minte o referinta spre aceasta lista.
+
 # daca adaugam people.copy() in add_to_db(), nu mai avem acel bug.
 lista_persoane2.append("Ghita")
 
