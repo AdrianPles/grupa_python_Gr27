@@ -59,6 +59,8 @@ def lista_cumparaturi(lista = list):
             del_elem = input("Introduceti elementul pe care doriti sa-l stergeti = ").lower()
             if del_elem == "":
                 print("Reincercati. Nu ati introdus elementul.")
+            elif del_elem not in lista:
+                print(f"Elementul '{del_elem}' nu se afla in lista.")
             else:
                 lista.remove(del_elem)
             print("Lista actualizata, este :", lista)
