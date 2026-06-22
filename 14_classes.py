@@ -14,7 +14,7 @@ class Cat:
 
 
     def __repr__(self):
-        return f"(Cat'{self.name}', '{self.owner}', '{self.temperament}')"
+        return f"Cat('{self.name}', '{self.owner}', '{self.temperament}')"
 
     def speak(self):
         print(f"{ self.name} says : 'Meow'")
@@ -36,7 +36,7 @@ cat2.eat(cat1)
 cats = [cat1, cat2]
 print(cats)
 
-stary_cats = [(Cat,'Shadow', 'Mark', 'Loving'), (Cat,'Ouroborus', 'John', 'Shy')]
+stary_cats = [Cat('Shadow', 'Mark', 'Loving'), Cat('Ouroborus', 'John', 'Shy')]
 print(stary_cats)
 
 # cat1.name = "Shadow"
@@ -45,7 +45,7 @@ print(stary_cats)
 
 # str(10) -> "10"
 
-print(" ============== Complex functionality ================")
+print("\n ============== Complex functionality ================")
 
 class BankAccount:
     bank = "ING"
@@ -89,23 +89,26 @@ print(acc2.bank)
 # perimeter: 2 * x + 2 * y
 
 
-class Rectangle():
+class Rectangle:
     def __init__(self, x, y):
         self.x = x
         self.y = y
 
     def area(self):
-        # self.area = self.x * self.y
-        # return f"Aria este {self.area}"
-        return self.x * self.y
+        self.area = self.x * self.y
+        return f"Aria este {self.area}."
+        # return self.x * self.y
 
     def perimeter(self):
-        # self.perimeter = 2 * self.x + 2 * self.y
-        # return f"Perimetrul este {self.perimeter}"
-        return self.x * 2 + self.y * 2
+        self.perimeter = 2 * self.x + 2 * self.y
+        return f"Perimetrul este {self.perimeter}."
+        # return self.x * 2 + self.y * 2
 
 
 test1 = Rectangle(3, 4)
+print(test1)
+print(test1.area())
+print(test1.perimeter())
 
 
 
