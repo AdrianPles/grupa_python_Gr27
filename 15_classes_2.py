@@ -54,7 +54,7 @@ class Todos:
     def __init__(self):
         self.todos_list = []
 
-
+# todo this
     def add_task(self, task):
         for elem in self.todos_list:
             if task == elem:
@@ -74,6 +74,7 @@ class Todos:
                 results.append(task)
         return results
 
+# todo this
     def filter_by_owner(self, owner):
         res = []
         for task in self.todos_list:
@@ -81,6 +82,7 @@ class Todos:
                 res.append(owner)
         return res
 
+# todo this
     def tasks_number(self, task):
         number = 0
         for task in self.todos_list:
