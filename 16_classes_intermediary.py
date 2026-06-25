@@ -1,3 +1,4 @@
+from operator import is_not_none
 from shlex import split
 
 
@@ -47,7 +48,7 @@ class BankAccount:
         # account_data = "John:300"
         # cls = BankAcount
         # obj1 = BankAccount() -> echivalent!
-        # owner receives account_data.split(":")[0] and amount receives)
+        # owner receives account_data.split(":")[0] and amount receives
         owner, amount = account_data,split(":")
         obj1 = cls(owner, int(amount))
         return obj1
