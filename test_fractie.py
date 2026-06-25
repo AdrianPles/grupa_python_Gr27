@@ -33,7 +33,7 @@ class Fractie:
 
     def __invert__(self):
         if self.numarator == 0:
-            raise ValueError("Nu se poate inversa o fractie cu numaeatorul 0!")
+            raise ValueError("Nu se poate inversa o fractie cu numaratorul 0!")
         return Fractie(self.numitor, self.numarator)
 
 
