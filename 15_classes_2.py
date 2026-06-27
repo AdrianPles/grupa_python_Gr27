@@ -67,14 +67,19 @@ class Todos:
         return len(self.todos_list)
 
 # todo this
+    # modificati metoda add_task, sa nu permita adaugarea unui task cu titlu duplicat.
+    # Daca exista deja un task cu acel titlu, sa printeze "Task with this title already
+    # exists!.
+
     def add_task(self, task):
-        self.todos_list.append(task)
-        # for elem in self.todos_list:
-        #     if self.title == elem:
+        # duplicat = False
+        # for task in self.todos_list:
+        #     if task.title in self.todos_list:
+        #         duplicat = True
         #         print("Task with this title already exists!")
-        #     else:
-        #         self.todos_list.append(task)
-        # return self.todos_list
+        #         break
+        # else:
+        self.todos_list.append(task)
 
     def remove_task(self, task_to_delete):
         for task in self.todos_list:
@@ -93,8 +98,6 @@ class Todos:
                 lista.append(t)
         return lista
 
-
-
     def filter_by_category(self, categ):
         results = []
         for task in self.todos_list:
@@ -102,22 +105,28 @@ class Todos:
                 results.append(task)
         return results
 
-# todo this
+    # scrieti o metoda in clasa Todos pentru a filtra dupa owner.
+    # acea metoda va returna toate task-urile ale unui owner, ce-l primim ca parametru al
+    # acelei metode.
+
     def filter_by_owner(self, owner):
-        res = []
+        own = []
         for task in self.todos_list:
             if task.owner == owner:
-                res.append(owner)
-        return res
+                own.append(task)
+        return own
 
-# todo this
-    def tasks_number(self, task):
-        number = 0
+    # scrieti o metoda in clasa Todos care numara toate task-urile ale unei anumite
+    # categorii, si returneaza cate task-uri sunt pentru acea categorie.
+    # Daca sunt 3 taskuri in total pe categoria Category.COURSE de exemplu,
+    # metoda returneaza numarul 3.
+
+    def tasks_number(self, categ):
+        nb_of_tasks = 0
         for task in self.todos_list:
-            number += 1
-        return number
-
-
+            if task.category == categ:
+                nb_of_tasks += 1
+        return nb_of_tasks
 
     def __str__(self):
         return f"{self.todos_list}"
@@ -132,18 +141,23 @@ todos1.add_task(Task("Go to second-hand store", "25.June", "Olivia", Categories.
 print(task1)
 todos1.mark_as_completed(task1)
 print(task1)
+print(" =========== Task filtered by owner :")
+print(todos1.filter_by_owner("Olivia"))
+
+print(" =========== Number of tasks by category :")
+print(todos1.tasks_number(Categories.SHOPPING))
 
 
 print(" =========== Task filtered by completed:")
 print(todos1.filter_by_completed(False))
 
 
-print("==============================")
+print("\n==============================")
 
 
 todos1.add_task(("Write a poem", "Today", "olivia", Categories.PRESENTS))
 
-print("===========Task count ================")
+print("\n===========Task count ================")
 print(len(todos1.todos_list))
 print((todos1.task_count))
 
@@ -156,7 +170,7 @@ print("================================")
 # print(todos1)
 #
 # print('\n','-' * 15, 'Filtrare dupa categorie', '-' * 15)
-# print(todos1.filter_by_category(Categories.SHOPPING))
+# print(todos1.filter_by_category(Categories.COURSE))
 
 
 
