@@ -47,7 +47,7 @@ class BankAccount:
         # cls = BankAcount
         # obj1 = BankAccount() -> echivalent!
         # owner receives account_data.split(":")[0] and amount receives account_data.split(":")[1]
-        owner, amount = account_data,split(":")
+        owner, amount = account_data.split(":")
         obj1 = cls(owner, int(amount))
         return obj1
 

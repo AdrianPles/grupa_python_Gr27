@@ -20,8 +20,8 @@ class Priority(Enum):
     ULTRA = 4
 
 
-# print(Categories.WORK.value)
-# print(Categories.WORK.name)
+print(Categories.WORK.value)
+print(Categories.WORK.name)
 curent_category = Categories.WORK
 
 if curent_category == Categories.WORK:
@@ -66,20 +66,17 @@ class Todos:
     def task_count(self):
         return len(self.todos_list)
 
-# todo this
     # modificati metoda add_task, sa nu permita adaugarea unui task cu titlu duplicat.
     # Daca exista deja un task cu acel titlu, sa printeze "Task with this title already
     # exists!.
 
     def add_task(self, task):
-        # duplicat = False
-        # for task in self.todos_list:
-        #     if task.title in self.todos_list:
-        #         duplicat = True
-        #         print("Task with this title already exists!")
-        #         break
-        # else:
-        self.todos_list.append(task)
+        for t in self.todos_list:
+            if t.title.lower() == task.title.lower():
+                print("Task with this title already exists!")
+                break
+        else:
+            self.todos_list.append(task)
 
     def remove_task(self, task_to_delete):
         for task in self.todos_list:
@@ -112,7 +109,7 @@ class Todos:
     def filter_by_owner(self, owner):
         own = []
         for task in self.todos_list:
-            if task.owner == owner:
+            if task.owner.lower() == owner.lower():
                 own.append(task)
         return own
 
@@ -138,11 +135,9 @@ todos1.add_task(task2)
 todos1.add_task(task3)
 todos1.add_task(Task("Go to second-hand store", "25.June", "Olivia", Categories.SHOPPING))
 
-print(task1)
+# print(task1)
 todos1.mark_as_completed(task1)
 print(task1)
-print(" =========== Task filtered by owner :")
-print(todos1.filter_by_owner("Olivia"))
 
 print(" =========== Number of tasks by category :")
 print(todos1.tasks_number(Categories.SHOPPING))
@@ -155,7 +150,7 @@ print(todos1.filter_by_completed(False))
 print("\n==============================")
 
 
-todos1.add_task(("Write a poem", "Today", "olivia", Categories.PRESENTS))
+todos1.add_task(Task("Write a poem", "Today", "olivia", Categories.PRESENTS))
 
 print("\n===========Task count ================")
 print(len(todos1.todos_list))
@@ -163,45 +158,45 @@ print((todos1.task_count))
 
 print("================================")
 
-# print(todos1)
-# print("\n")
-# print('-' * 15, 'Stergere task', '-' * 15)
+print(todos1)
+print("\n")
+print('-' * 15, 'Stergere task', '-' * 15)
 # todos1.remove_task(task2)
 # print(todos1)
-#
-# print('\n','-' * 15, 'Filtrare dupa categorie', '-' * 15)
-# print(todos1.filter_by_category(Categories.COURSE))
-
-
 
 task4 = Task("name", "23.June", "owner", Categories.SHOPPING)
 
 # Categories.SHOPPING     ///       "shopping"
 
-task5 = Task("Rezolvare Tema", "23.IUNIE", "John", Categories.COURSE)
+task5 = Task("Rezolvare aceasta Tema", "23.IUNIE", "John", Categories.COURSE)
+todos1.add_task(task5)
 print(task5.category)
+print("\n========================")
 
-# print('\n','-' * 15, 'Tipariere lista totala', '-' * 15)
-# print(todos1)
-# task6 = Task("Rezolvare Tema", "23.IUNIE", "Oliver", Categories.COURSE)
-# todos1.add_task(task6)
-# print(todos1)
-#
-# print('\n','-' * 15, 'Filtrare lista owner', '-' * 15)
-# print(todos1.filter_by_owner("Olivia"))
+print('\n','-' * 15, 'Tipariere lista totala', '-' * 15)
+print(todos1)
+task6 = Task("Rezolvare Tema", "23.IUNIE", "Oliver", Categories.COURSE)
+todos1.add_task(task6)
+print(todos1)
 
-# scrieti o metoda in clasa Todos pentru a filtra dupa owner.
-# acea metoda va returna toate task-urile ale unui owner, ce-l primim ca parametru al
-# acelei metode.
-
-# scrieti o metoda in clasa Todos care numara toate task-urile ale unei anumite
-# categorii, si returneaza cate task-uri sunt pentru acea categorie.
-# Daca sunt 3 taskuri in total pe categoria Category.COURSE de exemplu,
-# metoda returneaza numarul 3.
-
-# modificati metoda add_task, sa nu permita adaugarea unui task cu titlu duplicat.
-# Daca exista deja un task cu acel titlu, sa printeze "Task with this title already
-# exists!.
 
 for c in Categories:
     print(c)
+
+task7 = (Task("Buy some shoes", "28.Iunie", "George", Categories.SHOPPING))
+task8 = (Task("Buy car", "31.Iunie", "Adrian", Categories.WORK))
+
+todos1.add_task(task8)
+print("\n---------------------------------")
+todos1.add_task(task7)
+print(todos1.todos_list)
+print(todos1.task_count)
+
+print(" =========== Task filtered by owner :")
+print(todos1.filter_by_owner("adrian"))
+
+print(" =========== Number of tasks by category :")
+print(todos1.tasks_number(Categories.PRESENTS))
+
+print(" =========== Task filtered by completed:")
+print(todos1.filter_by_completed(False))
