@@ -81,7 +81,7 @@ class Cat(Animal, Observer):
 
 
 class Bat(Dog):
-    def spek(self):
+    def speak(self):
         print("Hello I'm Batman")
 
     def __str__(self):
