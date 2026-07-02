@@ -1,6 +1,3 @@
-from os import write
-
-from pygments.lexers import wren
 
 
 class Observer:
