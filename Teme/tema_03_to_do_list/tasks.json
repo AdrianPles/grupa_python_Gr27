@@ -1,0 +1,23 @@
+[
+  {
+    "titlu": "concediu",
+    "data_limita": "01.08.2026 10:00",
+    "responsabil": "Adrian",
+    "categorie": "work",
+    "task_finalizat": false
+  },
+  {
+    "titlu": "fotografie",
+    "data_limita": "25.08.2026 12:00",
+    "responsabil": "Oana",
+    "categorie": "hobby",
+    "task_finalizat": false
+  },
+  {
+    "titlu": "tema",
+    "data_limita": "07.07.2026 23:59",
+    "responsabil": "Adi",
+    "categorie": "curs",
+    "task_finalizat": false
+  }
+]
